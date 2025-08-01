@@ -1,0 +1,24 @@
+{
+  "name": "practice_area",
+  "version": "1.0.0",
+  "description": "这是一个用于帮助用户重建独立编程信心和能力的练习项目。",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shenqixiaofu/practice_area.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shenqixiaofu/practice_area/issues"
+  },
+  "homepage": "https://github.com/shenqixiaofu/practice_area#readme",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
