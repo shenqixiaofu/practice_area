@@ -1,0 +1,54 @@
+好的，我们开始吧！
+
+正如 `README.md` 中所说，我们的目标是让“删除”按钮工作起来。我们将使用“事件委托”这一强大技术。
+
+请将以下代码**添加**到 `script.js` 文件的**最末尾**。我会为你详细解释每一行代码的作用。
+
+```javascript
+// ==================================================================
+// 练习区域：事件委托 (Event Delegation)
+// ==================================================================
+
+// 目标：为所有“删除”按钮（包括未来动态添加的）添加点击功能。
+// 方法：我们不在每个小按钮上单独监听，而是在它们的父容器 `resultsDiv` 上设置一个监听器。
+
+resultsDiv.addEventListener('click', function(event) {
+    // `event` 对象包含了这次点击的所有信息，比如点击位置、被点击的元素等。
+    // `event.target` 就代表用户具体点击的那个HTML元素。
+    const clickedElement = event.target;
+
+    // 我们只关心“删除”按钮的点击事件。
+    // 通过检查被点击元素的 `tagName` 是否为 'BUTTON'，可以确保我们只处理按钮点击。
+    if (clickedElement.tagName === 'BUTTON') {
+        
+        // 从按钮的 `data-filename` 属性中安全地获取我们之前存储的文件名。
+        // 这就是我们要删除的目标。
+        const fileNameToDelete = clickedElement.dataset.filename;
+
+        // 为了从页面上移除整个文件项（而不仅仅是按钮），我们需要找到按钮的父元素。
+        // `.closest('.file-item')` 会从当前被点击的按钮开始，向上查找离它最近的、
+        // 拥有 `class="file-item"` 的祖先元素。
+        const itemToRemove = clickedElement.closest('.file-item');
+
+        // 作为一个好习惯，我们先检查是否真的找到了要移除的项。
+        if (itemToRemove) {
+            // 如果找到了，就调用 .remove() 方法，将它从HTML文档中彻底删除。
+            // 你会立刻在页面上看到效果。
+            itemToRemove.remove();
+        }
+
+        // 最后，我们在控制台打印一条消息，模拟正在向服务器发送删除请求。
+        // 在真实的项目中，这里会是一个 fetch() 调用，用来通知后端也删除这个文件。
+        console.log(`模拟API调用：正在请求删除文件 -> ${fileNameToDelete}`);
+    }
+});
+```
+
+**操作指南：**
+
+1.  复制以上代码块。
+2.  粘贴到 `script.js` 文件的最下方。
+3.  保存文件，然后回到浏览器刷新页面。
+4.  试着搜索一些文件，然后点击它们旁边的“删除”按钮，观察页面和控制台的变化。
+
+完成后告诉我，我们再进行下一步。

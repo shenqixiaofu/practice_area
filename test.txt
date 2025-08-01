@@ -1,0 +1,9 @@
+最后的Html是： <div class="file-item">
+                        <span>📄 fumo器文档.word</span>
+                        <button>删除</button>
+                    </div>
+                
+                    <div class="file-item">
+                        <span>📄 fumo器文档.txt</span>
+                        <button>删除</button>
+                    </div>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文件搜索练习</title>
+    <style>
+        body { font-family: sans-serif; margin: 2em; }
+        #results { border: 1px solid #ccc; padding: 1em; margin-top: 1em; min-height: 50px; }
+        .file-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 4px;
+            border-bottom: 1px solid #eee;
+        }
+        .file-item span {
+            flex-grow: 1;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .file-item butto{
+            flex-shrink: 0;
+            margin-left: 16px;
+        }
+    </style>
+</head>
+<body>
+    <h1>文件搜索功能</h1>
+    <p>在这里实现一个简化版的文件搜索功能。</p>
+    
+    <input type="text" id="searchInput" placeholder="输入文件名关键字...">
+    <button id="searchButton">搜索</button>
+    <br>
+    <input type="checkbox" id="exactMatchCheckbox">
+    <label for="exactMatchCheckbox">精确匹配</label>
+    
+    <h2>搜索结果:</h2>
+    <div id="results"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
